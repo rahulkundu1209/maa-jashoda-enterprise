@@ -29,7 +29,7 @@ export default function Home() {
                   href="/production"
                   className="bg-primary text-primary-foreground px-6 py-3 rounded-md font-semibold hover:opacity-90 transition-opacity"
                 >
-                  Explore Products
+                  Explore All Products
                 </Link>
                 <Link
                   href="/order"
