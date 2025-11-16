@@ -2,6 +2,7 @@
 import type { Metadata, Viewport } from 'next'
 import { Playfair_Display, Lora } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import Script from 'next/script'
 import './globals.css'
 
 const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfair' })
@@ -45,6 +46,16 @@ export default function RootLayout({
       <body className={`font-lora antialiased`}>
         {children}
         <Analytics />
+        <Script
+          id="zoho-init"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{ __html: "window.$zoho=window.$zoho || {}; $zoho.salesiq=$zoho.salesiq||{ready:function(){}};" }}
+        />
+        <Script
+          id="zsiqscript"
+          src="https://salesiq.zohopublic.com/widget?wc=siqe3501e8e8517ae904d3e18fdb11729c3369136d125b6e36886f2000ce8d41475"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   )
